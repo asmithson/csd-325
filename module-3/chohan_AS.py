@@ -2,7 +2,7 @@
 # 12/12/24
 # M3.2 Assignment
 # Reference help with BONUS: Gemini, personal communication, 2024)
-# I forgot to put in 'bonus = 0' to get the code to properly work. All other changes and code were mine.
+# I forgot to put in 'bonus = 0' to get the code to properly work. All other changes and added code were mine.
 
 """Cho-Han, by Al Sweigart al@inventwithpython.com
 The traditional Japanese dice game of even-odd.
