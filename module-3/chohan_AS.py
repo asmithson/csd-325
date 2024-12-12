@@ -1,3 +1,9 @@
+# Asher Smithson
+# 12/12/24
+# M3.2 Assignment
+# Reference help with BONUS: Gemini, personal communication, 2024)
+# I forgot to put in 'bonus = 0' to get the code to properly work. All other changes and code were mine.
+
 """Cho-Han, by Al Sweigart al@inventwithpython.com
 The traditional Japanese dice game of even-odd.
 View this code athttps://nostarch.com/big-book-small-python-projects
@@ -15,12 +21,12 @@ cup by the dealer sitting on the floor. The player must guess if the
 dice total to an even (cho) or odd (han) number.
 ''')
 
-print("\n**BONUS:** If you roll a 2 or 7 total, you get a 10 mon bonus!") # Added bonus to intro.
+print("\n**BONUS:** If you roll a 2 or 7 total, you get a 10 mon bonus!") # Added bonus to intro. for assignment.
 
 purse = 5000
 while True:  # Main game loop.
     # Place your bet:
-    print('AS: You have', purse, 'mon. How much do you bet? (or QUIT)') # Added initials: inside statement.
+    print('AS: You have', purse, 'mon. How much do you bet? (or QUIT)') # Added initials: inside statement for assignment.
     while True:
         pot = input('> ')
         if pot.upper() == 'QUIT':
@@ -68,7 +74,7 @@ while True:  # Main game loop.
 
     playerWon = bet == correctBet
     
-    # Determine if player won BONUS:
+    # Determine if player won BONUS: (for assignment).
     bonus = 0
     if dice1 + dice2 == 2 or dice1 + dice2 == 7:
         bonus = 10
@@ -78,8 +84,8 @@ while True:  # Main game loop.
     if playerWon:
         print('You won! You take', pot, 'AS.')
         purse = purse + pot + bonus  # Add the pot from player's purse.
-        print('The house collects a', pot // 12, 'mon fee.') # Changed house % to 12%.
-        purse = purse - (pot // 12)  # The house fee is now 12% from 10%.
+        print('The house collects a', pot // 12, 'mon fee.') # Changed house % to 12% for assignment.
+        purse = purse - (pot // 12)  # The house fee is now 12% from 10% for assignment.
     else:
         purse = purse - pot  # Subtract the pot from player's purse.
         print('You lost!')
