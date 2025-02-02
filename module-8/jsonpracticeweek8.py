@@ -5,6 +5,7 @@ import json
 json_file = "student.json"
 
 def load_students(student.json):
+    """Load student data from JSON file, or create an empty list if the file is missing/corrupt."""
     try:
         with open(file_path, "r") as file:
             return json.load(file)
