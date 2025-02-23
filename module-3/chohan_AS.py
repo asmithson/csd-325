@@ -26,7 +26,7 @@ print("\n**BONUS:** If you roll a 2 or 7 total, you get a 10 mon bonus!") # Adde
 purse = 5000
 while True:  # Main game loop.
     # Place your bet:
-    print('AS: You have', purse, 'mon. How much do you bet? (or QUIT)') # Added initials: inside statement for assignment.
+    print('You have', purse, 'mon. How much do you bet? (or QUIT)') 
     while True:
         pot = input('> ')
         if pot.upper() == 'QUIT':
@@ -53,7 +53,7 @@ while True:  # Main game loop.
 
     # Let the player bet cho or han:
     while True:
-        bet = input('> ').upper()
+        bet = input('AS: ').upper() # Added initials for assignment.
         if bet != 'CHO' and bet != 'HAN':
             print('Please enter either "CHO" or "HAN".')
             continue
@@ -65,6 +65,14 @@ while True:  # Main game loop.
     print('  ', JAPANESE_NUMBERS[dice1], '-', JAPANESE_NUMBERS[dice2])
     print('    ', dice1, '-', dice2)
 
+    # Determin if the player won a bonus: (for assignment).
+    roll_total = dice1 + dice2
+    bonus = 0
+    if roll_total in (2, 7):
+        bonus = 10
+        print("You rolled a", roll_total, "and earned a 10 mon bonus!") # Added bonus for assignment.
+        purse += 10
+        
     # Determine if the player won:
     rollIsEven = (dice1 + dice2) % 2 == 0
     if rollIsEven:
@@ -73,19 +81,13 @@ while True:  # Main game loop.
         correctBet = 'HAN'
 
     playerWon = bet == correctBet
-    
-    # Determine if player won BONUS: (for assignment).
-    bonus = 0
-    if dice1 + dice2 == 2 or dice1 + dice2 == 7:
-        bonus = 10
-        print('You rolled a {dice1} and a {dice2} (total: {dice1 + dice2}, that is a 2 or a 7! You get a 10 mon bonus!')
 
     # Display the bet results:
     if playerWon:
         print('You won! You take', pot, 'AS.')
         purse = purse + pot + bonus  # Add the pot from player's purse.
-        print('The house collects a', pot // 12, 'mon fee.') # Changed house % to 12% for assignment.
-        purse = purse - (pot // 12)  # The house fee is now 12% from 10% for assignment.
+        print('The house collects a', pot * 12 // 100, 'mon fee.') # Changed back to reflect 12% properly.
+        purse = purse - (pot * 12 // 100)  # The house fee is now 12% from 10 mon.
     else:
         purse = purse - pot  # Subtract the pot from player's purse.
         print('You lost!')
